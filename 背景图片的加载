@@ -1,0 +1,21 @@
+前提：必须先创建好互动界面
+例：initgraph(1000, 800);//后面1000，800为互动界面大小
+
+
+
+
+1.准备：下载好所用的图片，保存在电脑上。
+2.使用：在引用以下头文件的前提下使用：
+       #include<stdio.h>
+       #include<conio.h>
+       #include<graphics.h>
+       图片的加载（方式有2）：
+       1.简捷的使用（适合较短代码）：运用函数loadimage（NULL,"图片存放地址/图片名字"）；即可直接使用，如： loadimage(NULL（此处为如果使用函数命名才填）, "src/bg.png");
+       2.长期的使用：分3步：
+          1.起名字————》IMAGE
+          例：IMAGE background;//给图片取名字为background
+          2.把名字分配给某一张图片 loadimage(&background,"路径"，（缩放大小）n*m)
+          例：loadimage(&background, "src/bg.png"，1000,800);
+          3.显示图片 putimage(int x,int y,&background);
+          例： putimage(0,0,&background);//此处的0，0，代表的是在建立好的互动界面的像素点坐标，从左到右为X轴，从上到下为Y轴，原点为左上角。
+       
