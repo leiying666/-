@@ -1,0 +1,15 @@
+1.头文件的引用：
+#include<mmsystem.h>//包含多媒体库
+#pragma comment(lib,"winmm.lib")//不知道干什么，反正需要
+2.函数的使用:关键函数mciSendString（"指令集"，0，0，0）；
+  指令集：open：打开
+         play：播放
+         pause：暂停
+         resume：继续
+         close：关闭
+    其他指令：
+    repeat 重复播放（在play后使用）
+    wait：等待
+例：
+  mciSendString("open src/bg.mp3 alias bgm", NULL, 0, NULL);//alias为重命名，相当于define
+  mciSendString("play bgm repeat", NULL, 0, NULL);
